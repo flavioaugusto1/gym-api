@@ -19,7 +19,7 @@ export async function authenticate(
 
     const { user } = await authenticateUseCase.execute({ password, email })
 
-    const token = response.jwtSign(
+    const token = await response.jwtSign(
       {},
       {
         sign: {
